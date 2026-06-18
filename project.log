@@ -165,3 +165,71 @@
 2026-06-17 22:17:59 | INFO | P06 | ========================
 2026-06-17 22:22:43 | DEBUG | C06 | No variables found in .env
 2026-06-17 22:22:43 | DEBUG | P06 | No variables found in .env
+2026-06-17 22:24:29 | DEBUG | C06 | No variables found in .env
+2026-06-17 22:24:29 | INFO | C06 | === RUN START ===
+2026-06-17 22:24:29 | INFO | C06 | project=C06
+2026-06-17 22:24:29 | INFO | C06 | repo_dir=streaming-06-scenarios
+2026-06-17 22:24:29 | INFO | C06 | python=3.14.3
+2026-06-17 22:24:29 | INFO | C06 | os=Windows 11
+2026-06-17 22:24:29 | INFO | C06 | shell=powershell
+2026-06-17 22:24:29 | INFO | C06 | cwd=.
+2026-06-17 22:24:29 | INFO | C06 | github_actions=False
+2026-06-17 22:24:29 | INFO | C06 | ========================
+2026-06-17 22:24:29 | INFO | C06 | START consumer main()
+2026-06-17 22:24:29 | INFO | C06 | ========================
+2026-06-17 22:24:29 | INFO | C06 | ROOT_DIR = .
+2026-06-17 22:24:29 | INFO | C06 | DATA_DIR = data
+2026-06-17 22:24:29 | INFO | C06 | OUTPUT_CSV = data\output\consumed_sales.csv
+2026-06-17 22:24:29 | INFO | C06 | OUTPUT_DB = data\output\sales.duckdb
+2026-06-17 22:24:29 | INFO | C06 | OUTPUT_CHART = data\output\sales_chart_case.png
+2026-06-17 22:24:29 | INFO | C06 | REGIONS_CSV = data\regions.csv
+2026-06-17 22:24:29 | INFO | C06 | PRODUCTS_CSV = data\products.csv
+2026-06-17 22:24:29 | INFO | C06 | CURRENCIES_CSV = data\currencies.csv
+2026-06-17 22:24:29 | INFO | C06 | DISCOUNT_CODES_CSV = data\discount_codes.csv
+2026-06-17 22:24:29 | INFO | C06 | ========================
+2026-06-17 22:24:29 | INFO | C06 | SECTION A. Acquire
+2026-06-17 22:24:29 | INFO | C06 | ========================
+2026-06-17 22:24:29 | INFO | C06 | Loading settings from .env...
+2026-06-17 22:24:29 | INFO | C06 | KAFKA_BOOTSTRAP_SERVERS  = localhost:9092
+2026-06-17 22:24:29 | INFO | C06 | KAFKA_TOPIC              = product-sales-case
+2026-06-17 22:24:29 | INFO | C06 | KAFKA_GROUP_ID           = streaming-consumer-group-A
+2026-06-17 22:24:29 | INFO | C06 | CONSUMER_TIMEOUT_SECONDS = 10.0
+2026-06-17 22:24:29 | INFO | C06 | CONSUMER_MAX_MESSAGES    = 1000
+2026-06-17 22:24:29 | INFO | C06 | Verifying Kafka connection...
+2026-06-17 22:24:29 | INFO | C06 | Kafka port is reachable.
+2026-06-17 22:24:29 | INFO | C06 | Verifying Kafka topic...
+2026-06-17 22:24:37 | INFO | C06 | Topic 'product-sales-case' exists.
+2026-06-17 22:24:37 | INFO | C06 | Found 6 message(s) available.
+2026-06-17 22:24:37 | INFO | C06 | Creating Kafka consumer...
+2026-06-17 22:24:37 | INFO | C06 | Subscribed to topic: 'product-sales-case' (reading from beginning)
+2026-06-17 22:24:37 | INFO | C06 | ========================
+2026-06-17 22:24:37 | INFO | C06 | SECTION C. Consume and Process Messages
+2026-06-17 22:24:37 | INFO | C06 | ========================
+2026-06-17 22:24:37 | INFO | C06 | Initializing output...
+2026-06-17 22:24:37 | INFO | C06 | Output CSV cleared: consumed_sales.csv
+2026-06-17 22:24:38 | INFO | C06 | Database initialized: sales.duckdb
+2026-06-17 22:24:38 | INFO | C06 | Live chart initialized.
+2026-06-17 22:24:38 | INFO | C06 | Loading enrichment reference data...
+2026-06-17 22:24:38 | INFO | C06 | Found 6 region tax rates.
+2026-06-17 22:24:38 | INFO | C06 | Consuming messages...
+2026-06-17 22:24:38 | INFO | C06 | Waiting for up to 1000 message(s).
+2026-06-17 22:24:38 | INFO | C06 | Press CTRL+C to stop early.
+
+2026-06-17 22:24:48 | INFO | C06 | No message received within 10.0s timeout.
+2026-06-17 22:24:48 | INFO | C06 | Producer finished or paused. Stopping consumer.
+2026-06-17 22:24:48 | INFO | C06 | Kafka consumer closed.
+2026-06-17 22:24:48 | INFO | C06 | Saving artifacts...
+2026-06-17 22:24:49 | INFO | C06 | WROTE OUTPUT_CHART = data\output\sales_chart_case.png
+2026-06-17 22:24:49 | INFO | C06 | WROTE OUTPUT_CSV = data\output\consumed_sales.csv
+2026-06-17 22:24:49 | INFO | C06 | WROTE OUTPUT_DB = data\output\sales.duckdb
+2026-06-17 22:24:49 | INFO | C06 | Live chart closed.
+2026-06-17 22:24:49 | INFO | C06 | ========================
+2026-06-17 22:24:49 | INFO | C06 | SECTION E. Exit
+2026-06-17 22:24:49 | INFO | C06 | ========================
+2026-06-17 22:24:49 | INFO | C06 | Summary:
+2026-06-17 22:24:49 | INFO | C06 | Consumed 0 message(s) from topic 'product-sales-case'.
+2026-06-17 22:24:49 | INFO | C06 | Skipped  0 message(s).
+2026-06-17 22:24:49 | INFO | C06 | OUTPUT_CSV = data\output\consumed_sales.csv
+2026-06-17 22:24:49 | INFO | C06 | ========================
+2026-06-17 22:24:49 | INFO | C06 | Consumer executed successfully!
+2026-06-17 22:24:49 | INFO | C06 | ========================
