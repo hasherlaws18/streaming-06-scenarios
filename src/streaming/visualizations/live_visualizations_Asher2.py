@@ -120,7 +120,7 @@ def update_live_chart(
     # Re-plot the updated x and y values as a line chart with markers.
     # Set the marker to "o" to show points at each message.
     # Options include "o" for circles, "s" for squares, "^" for triangles, and more.
-    axis.plot(x_values, y_values, marker="o")
+    axis.bar(x_values, y_values)
 
     # Set the title and axis labels again after clearing the axis.
     axis.set_title("Sales Amount per Kafka Message")
